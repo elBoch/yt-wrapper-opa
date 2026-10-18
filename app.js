@@ -216,7 +216,7 @@
       var d = player.getVideoData();
       if (d && d.title) {
         var t = d.title;
-        if (t.length > 100) t = t.slice(0, 100).replace(/\s+\S*$/, '') + '…';   // auf 100 Zeichen kürzen
+        if (t.length > 75) t = t.slice(0, 75).replace(/\s+\S*$/, '') + '…';   // auf 75 Zeichen kürzen
         $('playerTitle').textContent = t;
       }
     } catch (e) {}
