@@ -1,0 +1,4 @@
+# Files Windows/macOS drop into folders
+Thumbs.db
+desktop.ini
+.DS_Store

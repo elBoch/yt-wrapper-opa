@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Konzert</title>
+  <meta name="theme-color" content="#15110E">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Kachel-Seite ===== -->
+  <main id="home" class="screen" aria-label="Musik auswählen">
+    <div id="grid" class="grid"></div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <!-- ===== Player-Seite ===== -->
+  <section id="player" class="screen" aria-label="Wiedergabe" hidden>
+    <header class="player-title">
+      <span id="playerTitle"></span>
+      <span class="title-rule" aria-hidden="true"></span>
+    </header>
+
+    <div class="video-area">
+      <div id="yt"></div>
+      <!-- unsichtbare Schicht: fängt jedes Antippen ab (Pause / Weiter) -->
+      <button id="tapLayer" class="tap-layer" aria-label="Pause oder Weiter"></button>
+      <div id="indicator" class="indicator" aria-hidden="true">
+        <svg id="iconPause" viewBox="0 0 64 64"><rect x="14" y="10" width="12" height="44" rx="3"/><rect x="38" y="10" width="12" height="44" rx="3"/></svg>
+        <svg id="iconPlay" viewBox="0 0 64 64"><path d="M18 8 L54 32 L18 56 Z"/></svg>
+        <span id="indicatorText">Pause</span>
+      </div>
+    </div>
+
+    <nav class="bottom-bar">
+      <button id="btnBack" class="big-btn btn-back">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><path d="M32 10 L16 26 L32 42"/></svg>
+        Zurück
+      </button>
+      <button id="btnNext" class="big-btn btn-next">
+        Nächstes
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M12 6 L32 20 L12 34 Z"/></svg>
+      </button>
+    </nav>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
