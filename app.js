@@ -23,6 +23,7 @@
   var toastTimer = 0;
   var startCheckTimer = 0;
   var lastTileTap = 0;
+  var titleFallbackTimer = 0;
 
   var ST = { UNSTARTED: -1, ENDED: 0, PLAYING: 1, PAUSED: 2, BUFFERING: 3, CUED: 5 };
 
@@ -208,6 +209,19 @@
     }, 2500);
   }
 
+  // Oben steht der Titel des gerade laufenden Videos (nicht der Kachel-Name)
+  function updateTitle() {
+    if (!current || !player || !playerReady) return;
+    try {
+      var d = player.getVideoData();
+      if (d && d.title) {
+        var t = d.title;
+        if (t.length > 100) t = t.slice(0, 100).replace(/\s+\S*$/, '') + '…';   // auf 100 Zeichen kürzen
+        $('playerTitle').textContent = t;
+      }
+    } catch (e) {}
+  }
+
   function isLastInPlaylist() {
     var list = player.getPlaylist && player.getPlaylist();
     if (!list || !list.length) return true;         // einzelnes Video
@@ -216,6 +230,8 @@
 
   function onStateChange(e) {
     if (!current) return;
+    updateTitle();
+    setTimeout(updateTitle, 1200);                   // Titel ist oft erst kurz nach dem Wechsel da
     if (e.data === ST.PLAYING) {
       hideIndicatorIfWaiting();
       requestWakeLock();
@@ -239,7 +255,12 @@
   /* ---------- 5. Bildschirme wechseln ---------- */
   function openPlayer(entry) {
     current = entry;
-    $('playerTitle').textContent = entry.title;
+    $('playerTitle').textContent = '';
+    clearTimeout(titleFallbackTimer);
+    // Falls YouTube keinen Titel liefert: Kachel-Name als Notlösung
+    titleFallbackTimer = setTimeout(function () {
+      if (current && !$('playerTitle').textContent) $('playerTitle').textContent = entry.title;
+    }, 4000);
     home.hidden = true;
     playerScreen.hidden = false;
     hideIndicator();
