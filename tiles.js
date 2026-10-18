@@ -22,42 +22,38 @@
 window.TILES = [
   {
     // einzelnes Video – hr-Sinfonieorchester, Beethoven 7. Sinfonie
-    title: "Beethoven",
-    link:  "https://www.youtube.com/watch?v=OeGRbhHPBoM",
+    title: "Blasmusik 1",
+    link:  "https://www.youtube.com/watch?v=oFvE5rRE98I&list=PLTwR7pbPsGeubJ8QCgHszUnm_aUI3AlVo",
     image: "beethoven.jpg"
   },
   {
     // Liste aus 3 Videos – zum Testen von "Nächstes"
-    title: "Mozart",
-    link: [
-      "https://www.youtube.com/watch?v=QyQ-POuTNn8",   // Sinfonie Nr. 40
-      "https://www.youtube.com/watch?v=fAiF1PNlQ50",   // Sinfonie Nr. 39
-      "https://www.youtube.com/watch?v=1t18CpBuJJM"    // Sinfonie Nr. 38 »Prager«
-    ],
+    title: "Blasmusik 2",
+    link: "https://www.youtube.com/watch?v=c1690voBTDM&list=PLN_2_Y03IVl27jinxbx8Ru9V8Gg3SYoG5",
     image: "mozart.jpg"
   },
   {
     // Wiener Philharmoniker, Zubin Mehta – An der schönen blauen Donau
-    title: "Wiener Philharmoniker",
-    link:  "https://www.youtube.com/watch?v=fHzhDKwYP2s",
+    title: "Blasmusik 3",
+    link:  "https://www.youtube.com/watch?v=RBOcQKipA8k&list=PLDEkYbkDjWbWZ8waLWPdkzh2nOjfTjdl1",
     image: "philharmoniker.jpg"
   },
   {
     // YouTube-Playlist – Netherlands Bach Society, Brandenburgische Konzerte
-    title: "Bach",
-    link:  "https://www.youtube.com/playlist?list=PLecKPCyj4yRPXmmt0yFK3pF2HY8kux3RH",
+    title: "Blasmusik 4",
+    link:  "https://www.youtube.com/watch?v=JC1C2MGjo3o&list=PLuMJAuLnGW7rwzUGXJAO15_IxNmYZD3ho",
     image: "bach.jpg"
   },
   {
     // Wiener Johann Strauss Orchester – An der schönen blauen Donau
-    title: "Strauss",
-    link:  "https://www.youtube.com/watch?v=gVp6Ilod3kM",
+    title: "Klassik 1",
+    link:  "https://www.youtube.com/watch?v=r94mhIQI6Q4&list=PL70QeIM3H_23lwXMefpoTZz0Iim_q-anK",
     image: "strauss.jpg"
   },
   {
     // hr-Sinfonieorchester – Streicherserenade
-    title: "Tschaikowsky",
-    link:  "https://www.youtube.com/watch?v=CSu86-1BruE",
+    title: "Klassik 2",
+    link:  "https://www.youtube.com/watch?v=uEiczVQnvE8&list=PL70QeIM3H_23iWqz0ZS5rH6uGm_fGu0R9",
     image: "tschaikowsky.jpg"
   }
 ];
